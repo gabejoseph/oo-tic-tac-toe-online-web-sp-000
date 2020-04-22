@@ -79,9 +79,9 @@ class TicTacToe
     end
   end
   
-  # def full?(board)
-  #   board.all?{|pipes| pipes == "X" || pipes == "O"}
-  # end
+  def full?(board)
+    board.all?{|pipes| pipes == "X" || pipes == "O"}
+  end
   
   # def draw?(board)
   #   if won?(board) == nil && full?(board) == true 

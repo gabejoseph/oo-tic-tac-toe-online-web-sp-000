@@ -79,26 +79,26 @@ class TicTacToe
     end
   end
   
-  def full?(board)
-    board.all?{|pipes| pipes == "X" || pipes == "O"}
+  def full?
+    @board.all?{|pipes| pipes == "X" || pipes == "O"}
+  end
+
+  def draw?
+    if won? == nil && full? == true 
+      return true
+    elsif won? == true 
+      return false
+    end
   end
   
-  # def draw?(board)
-  #   if won?(board) == nil && full?(board) == true 
-  #     return true
-  #   elsif won?(board) == true 
-  #     return false
-  #   end
-  # end
+  def over?
+    won? || full? 
+  end
   
-  # def over?(board)
-  #   won?(board) || full?(board) 
-  # end
-  
-  # def winner(board)
-  #   if winning_combo = won?(board)
-  #     board[winning_combo[0]] 
-  #   end
-  # end
+  def winner
+    if winning_combo = won?
+      @board[winning_combo[0]] 
+    end
+  end
 
 end
